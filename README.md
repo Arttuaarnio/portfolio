@@ -1,69 +1,107 @@
-# React + TypeScript + Vite
+# Personal portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plans for a simple and responsive portfolio website.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+| Feature       | Tech Used          |
+| ------------- | ------------------ |
+| Framework     | React + TypeScript |
+| Styling       | Tailwind CSS       |
+| UI Components | shadcn/ui          |
+| Animations    | Framer Motion      |
+| Icons         | Lucide Icons       |
+| Fonts         | Google Fonts       |
+| Deployment    | Vercel             |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Folder Structure (Planned)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+/my-portfolio
+├── public/
+│   └── images/            # Assets like screenshots or avatars
+├── src/
+│   ├── components/        # Navbar, Hero, ProjectCard, etc.
+│   ├── pages/             # Homepage (App-level sections)
+│   ├── styles/            # Tailwind base + custom styles
+│   ├── utils/             # Helper functions, animation configs
+│   ├── App.tsx            # Main component
+│   └── main.tsx           # React entry point
+├── tailwind.config.ts
+├── shadcn.config.ts
+├── tsconfig.json
+└── index.html
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## TODO List
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Planning
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Define style: fonts, colors, vibe
+- Write a short, unique bio
+- Collect project images and descriptions
+
+### 2. Setup
+
+**Tailwind CSS**
+
+- Follow Tailwind's guide for CRA.
+
+**shadcn/ui Installation**
+
+```bash
+npm install tailwindcss-animate
+npx shadcn-ui@latest init
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add card
+# Add other components as needed (e.g. avatar, tooltip, etc.)
 ```
+
+**Framer Motion**
+
+```bash
+npm install framer-motion
+```
+
+**Icons**
+
+```bash
+npm install lucide-react
+```
+
+### 3. Build Components
+
+- **Navbar** – anchored links with smooth scroll
+- **Hero** – fun intro with animations (emoji, title, name)
+- **About** – a short bio with a personality-rich tone
+- **Projects** – responsive cards w/ animations & hover
+- **Contact** – inline form or social links section
+
+Use shadcn/ui for buttons, cards, and layout styling.
+
+### 4. Animations
+
+- Page and section transitions with Framer Motion
+- Hover states for buttons and project cards
+- Optional: animated background/cursor trail (like Tedawf)
+
+### 5. Responsive Design
+
+- Ensure proper spacing/scaling for mobile, tablet, desktop
+- Use responsive Tailwind utility classes (`sm:`, `md:`, etc.)
+
+### 6. Deployment
+
+- Deploy on Vercel
+- Configure custom domain (optional)
+
+
+## Bonus Features (Optional)
+
+- Dark mode toggle (shadcn/ui provides built-in support)
+- Custom cursor or interactive elements
+- Easter egg or hidden page
+- Now Playing / status widget
+- Fun 404 page
