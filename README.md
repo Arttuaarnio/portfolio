@@ -37,13 +37,13 @@ Plans for a simple and responsive portfolio website.
 
 ## TODO List
 
-### 1. Planning
+### 1. Planning ✅
 
 - Define style: fonts, colors, vibe
 - Write a short, unique bio
 - Collect project images and descriptions
 
-### 2. Setup
+### 2. Setup ✅
 
 **Tailwind CSS**
 
@@ -71,7 +71,7 @@ npm install framer-motion
 npm install lucide-react
 ```
 
-### 3. Build Components
+### 3. Build Components ✅
 
 - **Navbar** – anchored links with smooth scroll
 - **Hero** – fun intro with animations (emoji, title, name)
@@ -87,7 +87,7 @@ Use shadcn/ui for buttons, cards, and layout styling.
 - Hover states for buttons and project cards
 - Optional: animated background/cursor trail (like Tedawf)
 
-### 5. Responsive Design
+### 5. Responsive Design ✅
 
 - Ensure proper spacing/scaling for mobile, tablet, desktop
 - Use responsive Tailwind utility classes (`sm:`, `md:`, etc.)
