@@ -82,13 +82,13 @@ const technologies = [
 
 export default function Technologies() {
   return (
-    <section className="py-10 bg-background">
+    <section className="py-8 bg-background">
       <div className="max-w-3xl mx-auto px-4">
         <h2 className="text-2xl font-semibold mb-6 text-center md:text-left">
           Technologies
         </h2>
         <p className="text-muted-foreground text-center md:text-left mb-8">
-          Constantly curious and always exploring new tech for fun - next up:
+          Constantly curious and exploring - next up:
           diving into AWS{" "}
           <span className="text-2xl ">💪</span>{" "}
           Here's some tools and technologies I've already worked with:

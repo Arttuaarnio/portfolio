@@ -22,7 +22,7 @@ const Navbar = () => {
           </Button>
         </nav>
 
-        <div className="w-[250px] flex justify-end">
+        <div className="w-[250px] flex justify-end cursor-pointer">
           <ThemeToggle />
         </div>
       </div>

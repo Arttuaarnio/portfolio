@@ -58,12 +58,12 @@ export default function Experience() {
   ];
 
   return (
-    <section className="bg-background py-4">
+    <section className="bg-background pb-8">
       <div className="max-w-3xl mx-auto px-4">
         <Tabs defaultValue="work" className="w-full">
           <TabsList className="mb-8">
-            <TabsTrigger value="work">Work</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="work" className="cursor-pointer">Work</TabsTrigger>
+            <TabsTrigger value="education" className="cursor-pointer">Education</TabsTrigger>
           </TabsList>
 
           <TabsContent value="work">
