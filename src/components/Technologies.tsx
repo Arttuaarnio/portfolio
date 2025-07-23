@@ -6,25 +6,36 @@ import {
 } from "@/components/ui/tooltip";
 
 const technologies = [
+  // Core Web
   {
-    name: "TypeScript",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    name: "HTML5",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS3",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
   },
   {
     name: "JavaScript",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   },
   {
+    name: "TypeScript",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  },
+  // Frontend Frameworks
+  {
     name: "React",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
   {
-    name: "Node.js",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg",
-  },
-  {
     name: "Next.js",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  },
+  // Backend & Databases
+  {
+    name: "Node.js",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg",
   },
   {
     name: "Python",
@@ -42,29 +53,10 @@ const technologies = [
     name: "PostgreSQL",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
   },
-  {
-    name: "Git",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-  },
-  {
-    name: "GitHub",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-  },
+  // DevOps & Cloud
   {
     name: "Docker",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-  },
-  {
-    name: "HTML5",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-  },
-  {
-    name: "CSS3",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-  },
-  {
-    name: "VS Code",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
   },
   {
     name: "Firebase",
@@ -74,6 +66,20 @@ const technologies = [
     name: "Heroku",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg",
   },
+  // Tools
+  {
+    name: "Git",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  {
+    name: "GitHub",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  },
+  {
+    name: "VS Code",
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+  },
+  // OS
   {
     name: "MacOS",
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg",
@@ -88,14 +94,13 @@ export default function Technologies() {
           Technologies
         </h2>
         <p className="text-muted-foreground text-center md:text-left mb-8">
-          Constantly curious and exploring - next up:
-          diving into AWS{" "}
-          <span className="text-2xl ">💪</span>{" "}
-          Here's some tools and technologies I've already worked with:
+          Constantly curious and exploring - next up: AWS{" "}
+          <span className="text-2xl ">💪</span> Here's some tools and
+          technologies I've already worked with:
         </p>
 
         <TooltipProvider>
-          <div className="flex flex-wrap justify-center md:justify-start gap-4">
+          <div className="flex flex-wrap justify-center gap-5">
             {technologies.map((tech) => (
               <Tooltip key={tech.name}>
                 <TooltipTrigger asChild>

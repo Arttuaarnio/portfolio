@@ -9,35 +9,9 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import { Github } from "lucide-react";
+import data from "@/data/FeaturedProjectsData.ts";
 
-const projectData = [
-  {
-    title: "PoolPocket",
-    description:
-      "Find nearby pool halls, chat with an AI chatbot, save favorites and level up your game.",
-    image: "/images/poolpocket.png",
-    link: "/projects/poolpocket",
-    tech: [
-      "React Native",
-      "Expo",
-      "TypeScript",
-      "Google Cloud",
-      "Firebase",
-      "OpenAI",
-    ],
-    source: "https://github.com/Arttuaarnio/PoolPocket",
-    website: "",
-  },
-  {
-    title: "This Portfolio",
-    description:
-      "My personal portfolio showcasing my skills, projects, and experience.",
-    image: "/images/portfolio.png",
-    link: "/projects/portfolio",
-    tech: ["React", "Vite", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    source: "https://github.com/Arttuaarnio/portfolio",
-  },
-];
+const projectData = data;
 
 export default function Projects() {
   return (
