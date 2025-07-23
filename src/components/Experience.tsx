@@ -58,7 +58,7 @@ function ExperienceList({ data }: { data: any[] }) {
           <div className="flex-1">
             <div className="flex items-start justify-between mb-2">
               <h3 className="text-lg font-semibold">{item.company}</h3>
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm text-muted-foreground ml-4 ">
                 {item.duration}
               </span>
             </div>
