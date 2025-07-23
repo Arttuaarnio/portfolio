@@ -1,107 +1,33 @@
-# Personal portfolio
+# My Personal Portfolio
 
-Plans for a simple and responsive portfolio website.
+[www.arttuaarnio.tech](https://www.arttuaarnio.tech)
 
-
-## Tech Stack
-
-| Feature       | Tech Used          |
-| ------------- | ------------------ |
-| Framework     | React + TypeScript |
-| Styling       | Tailwind CSS       |
-| UI Components | shadcn/ui          |
-| Animations    | Framer Motion      |
-| Icons         | Lucide Icons       |
-| Fonts         | Google Fonts       |
-| Deployment    | Vercel             |
+A simple and responsive portfolio website built to showcase my projects and skills with a clean and modern UI.
 
 
-## Folder Structure (Planned)
+## 🚀 Features
 
-```
-/my-portfolio
-├── public/
-│   └── images/            # Assets like screenshots or avatars
-├── src/
-│   ├── components/        # Navbar, Hero, ProjectCard, etc.
-│   ├── pages/             # Homepage (App-level sections)
-│   ├── styles/            # Tailwind base + custom styles
-│   ├── utils/             # Helper functions, animation configs
-│   ├── App.tsx            # Main component
-│   └── main.tsx           # React entry point
-├── tailwind.config.ts
-├── shadcn.config.ts
-├── tsconfig.json
-└── index.html
-```
-
-## TODO List
-
-### 1. Planning ✅
-
-- Define style: fonts, colors, vibe
-- Write a short, unique bio
-- Collect project images and descriptions
-
-### 2. Setup ✅
-
-**Tailwind CSS**
-
-- Follow Tailwind's guide for CRA.
-
-**shadcn/ui Installation**
-
-```bash
-npm install tailwindcss-animate
-npx shadcn-ui@latest init
-npx shadcn-ui@latest add button
-npx shadcn-ui@latest add card
-# Add other components as needed (e.g. avatar, tooltip, etc.)
-```
-
-**Framer Motion**
-
-```bash
-npm install framer-motion
-```
-
-**Icons**
-
-```bash
-npm install lucide-react
-```
-
-### 3. Build Components ✅
-
-- **Navbar** – anchored links with smooth scroll
-- **Hero** – fun intro with animations (emoji, title, name)
-- **About** – a short bio with a personality-rich tone
-- **Projects** – responsive cards w/ animations & hover
-- **Contact** – inline form or social links section
-
-Use shadcn/ui for buttons, cards, and layout styling.
-
-### 4. Animations
-
-- Page and section transitions with Framer Motion
-- Hover states for buttons and project cards
-- Optional: animated background/cursor trail (like Tedawf)
-
-### 5. Responsive Design ✅
-
-- Ensure proper spacing/scaling for mobile, tablet, desktop
-- Use responsive Tailwind utility classes (`sm:`, `md:`, etc.)
-
-### 6. Deployment
-
-- Deploy on Vercel
-- Configure custom domain (optional)
+- About section with social links and contact options
+- Experience tabs with work and education
+- Interactive project cards on the homepage 
+- Fully responsive design
+- Dark/light mode toggle
+- Deployed on Vercel with custom domain support
 
 
-## Bonus Features (Optional)
+## 🛠️ Tech Stack
 
-- Dark mode toggle (shadcn/ui provides built-in support)
-- Custom cursor or interactive elements
-- Easter egg or hidden page
-- Now Playing / status widget
-- Fun 404 page
+| Technology    | Description               |
+| ------------- | ------------------------- |
+| Framework     | React + Vite + TypeScript |
+| Styling       | Tailwind CSS              |
+| UI Components | shadcn/ui                 |
+| Deployment    | Vercel                    |
+
+
+## ✨ Upcoming Features
+
+- Page and section animations
+- Custom 404 error page
+- More projects to the actual projects page
+- Possible blog if wanted
