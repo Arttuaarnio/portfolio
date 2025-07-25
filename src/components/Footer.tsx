@@ -9,31 +9,31 @@ export default function Footer() {
           © {new Date().getFullYear()} Arttu Aarnio
         </p>
         <div className="flex gap-4">
-          <Button variant="ghost" size="icon" asChild>
-            <a
-              href="https://www.linkedin.com/in/arttu-aarn-io"
-              target="_blank"
-              rel="noreferrer"
-            >
+          <a
+            href="https://www.linkedin.com/in/arttu-aarn-io"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button variant="ghost" size="icon">
               <Linkedin className="w-6 h-6" />
-            </a>
-          </Button>
+            </Button>
+          </a>
 
-          <Button variant="ghost" size="icon" asChild>
-            <a
-              href="https://github.com/arttuaarnio"
-              target="_blank"
-              rel="noreferrer"
-            >
+          <a
+            href="https://github.com/arttuaarnio"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button variant="ghost" size="icon">
               <Github className="w-6 h-6" />
-            </a>
-          </Button>
+            </Button>
+          </a>
 
-          <Button variant="ghost" size="icon" asChild>
-            <a href="mailto:arttueino@gmail.com">
+          <a href="mailto:arttueino@gmail.com">
+            <Button variant="ghost" size="icon">
               <Mail className="w-6 h-6" />
-            </a>
-          </Button>
+            </Button>
+          </a>
         </div>
       </div>
     </footer>

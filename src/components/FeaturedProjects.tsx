@@ -61,37 +61,29 @@ export default function Projects() {
 
                     <div className="flex gap-2">
                       {project.source && (
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          asChild
+                        <a
+                          href={project.source}
+                          target="_blank"
+                          rel="noreferrer"
                           className="text-muted-foreground flex items-center gap-1"
                         >
-                          <a
-                            href={project.source}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
+                          <Button variant="ghost" size="sm">
                             <Github className="w-6 h-6" />
                             Source
-                          </a>
-                        </Button>
+                          </Button>
+                        </a>
                       )}
                       {project.website && (
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          asChild
+                        <a
+                          href={project.website}
+                          target="_blank"
+                          rel="noreferrer"
                           className="text-muted-foreground"
                         >
-                          <a
-                            href={project.website}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
+                          <Button variant="ghost" size="sm">
                             Website
-                          </a>
-                        </Button>
+                          </Button>
+                        </a>
                       )}
                     </div>
                   </div>

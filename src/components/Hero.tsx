@@ -20,38 +20,38 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-2 pt-6 justify-center md:justify-start">
-            <Button asChild>
-              <a href="/resume.pdf" download>
+            <a href="/resume.pdf" download>
+              <Button>
                 <Download className="w-4 h-4 mr-2" />
                 Resume
-              </a>
-            </Button>
+              </Button>
+            </a>
 
-            <Button variant="ghost" size="icon" asChild>
-              <a
-                href="https://www.linkedin.com/in/arttu-aarn-io"
-                target="_blank"
-                rel="noreferrer"
-              >
+            <a
+              href="https://www.linkedin.com/in/arttu-aarn-io"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button variant="ghost" size="icon">
                 <Linkedin className="w-5 h-5" />
-              </a>
-            </Button>
+              </Button>
+            </a>
 
-            <Button variant="ghost" size="icon" asChild>
-              <a
-                href="https://github.com/arttuaarnio"
-                target="_blank"
-                rel="noreferrer"
-              >
+            <a
+              href="https://github.com/arttuaarnio"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button variant="ghost" size="icon">
                 <Github className="w-5 h-5" />
-              </a>
-            </Button>
+              </Button>
+            </a>
 
-            <Button variant="ghost" size="icon" asChild>
-              <a href="mailto:arttueino@gmail.com">
+            <a href="mailto:arttueino@gmail.com">
+              <Button variant="ghost" size="icon">
                 <Mail className="w-5 h-5" />
-              </a>
-            </Button>
+              </Button>
+            </a>
           </div>
         </div>
 
