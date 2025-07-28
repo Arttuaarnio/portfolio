@@ -24,4 +24,21 @@ export default [
     tech: ["React", "Vite", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     source: "https://github.com/Arttuaarnio/portfolio",
   },
+  {
+    title: "MovieMania",
+    description: "Share and discover movies, powered by TMDB API.",
+    image: "/images/moviemania.png",
+    link: "/projects/moviemania",
+    tech: [
+      "React",
+      "Typescript",
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "JWT",
+      "TMDB API",
+    ],
+    source: "https://github.com/Arttuaarnio/moviemania",
+    website: "https://movie-mania.live",
+  },
 ];

@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import data from "@/data/FeaturedProjectsData.ts";
 
 const projectData = data;
@@ -78,9 +78,10 @@ export default function Projects() {
                           href={project.website}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-muted-foreground"
+                          className="text-muted-foreground flex items-center gap-1"
                         >
                           <Button variant="ghost" size="sm">
+                            <ExternalLink className="w-6 h-6" />
                             Website
                           </Button>
                         </a>
