@@ -18,11 +18,36 @@ export default [
   },
   {
     title: "My Personal Portfolio",
-    description:
-      "Made to showcase my skills, projects and experience.",
+    description: "Made to showcase my skills, projects and experience.",
     image: "/images/portfolio.png",
     link: "/projects/portfolio",
     tech: ["React", "Vite", "TypeScript", "Tailwind CSS", "Shadcn UI"],
     source: "https://github.com/Arttuaarnio/portfolio",
+  },
+  {
+    title: "MovieMania",
+    description: "Share and discover movies, powered by TMDB API.",
+    image: "/images/moviemania.png",
+    link: "/projects/moviemania",
+    tech: [
+      "React",
+      "Typescript",
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "JWT",
+      "TMDB API",
+    ],
+    source: "https://github.com/Arttuaarnio/moviemania",
+    website: "https://movie-mania.live",
+  },
+  {
+    title: "Peg Solitaire Solver",
+    description:
+      "Solving a childhood game using a recursive backtracking algorithm.",
+    image: "/images/pegsolitare.png",
+    link: "/projects/pegsolitare",
+    tech: ["Python", "Tkinter"],
+    source: "https://github.com/Arttuaarnio/peg-solitaire-solver",
   },
 ];
