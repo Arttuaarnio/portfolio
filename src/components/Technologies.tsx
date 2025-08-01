@@ -94,9 +94,7 @@ export default function Technologies() {
           Technologies
         </h2>
         <p className="text-muted-foreground text-center md:text-left mb-8">
-          Constantly curious and exploring - next up: AWS{" "}
-          <span className="text-2xl ">💪</span> Here's some tools and
-          technologies I've already worked with:
+          Here are some tools and technologies I've already worked with:
         </p>
 
         <TooltipProvider>

@@ -12,7 +12,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-between align-start">
           {projectData.map((project, index) => (
             <div key={index}>
-              <div className="max-w-3xl mx-auto relative p-6 rounded-xl bg-white/70 dark:bg-zinc-900/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg mb-2">
+              <div className="max-w-3xl min-h-[450px] mx-auto relative p-6 rounded-xl bg-white/70 dark:bg-zinc-900/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg mb-2">
                 <div className="mb-4">
                   <img
                     src={project.image}

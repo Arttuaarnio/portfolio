@@ -24,7 +24,7 @@ export default function Projects() {
           </Button>
         </div>
         <p className="text-muted-foreground mb-8">
-          Swipe through some of my favorite personal projects.
+          Swipe through couple of my favorite personal projects.
         </p>
 
         <Carousel
