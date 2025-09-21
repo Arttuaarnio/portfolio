@@ -1,21 +1,46 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/HomePage";
 import Projects from "./pages/ProjectsPage";
+
+function AppContent() {
+  const location = useLocation();
+
+  // Scroll to top on page refresh
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <>
+      <ScrollToTop />
+      <Navbar />
+      <main className="pt-20">
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+        </AnimatePresence>
+      </main>
+    </>
+  );
+}
 
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Router>
-        <Navbar />
-        <main className="pt-20">
-          {" "}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
-        </main>
+        <AppContent />
       </Router>
     </ThemeProvider>
   );

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   Tooltip,
   TooltipContent,
@@ -86,39 +87,83 @@ const technologies = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 export default function Technologies() {
   return (
     <section className="py-8 bg-background">
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-2xl font-semibold mb-6 text-center md:text-left">
+      <motion.div
+        className="max-w-3xl mx-auto px-4"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.h2
+          className="text-2xl font-semibold mb-6 text-center md:text-left"
+          variants={itemVariants}
+        >
           Technologies
-        </h2>
-        <p className="text-muted-foreground text-center md:text-left mb-8">
+        </motion.h2>
+        <motion.p
+          className="text-muted-foreground text-center md:text-left mb-8"
+          variants={itemVariants}
+        >
           Here are some tools and technologies I've already worked with:
-        </p>
+        </motion.p>
 
         <TooltipProvider>
-          <div className="flex flex-wrap justify-center gap-5">
-            {technologies.map((tech) => (
-              <Tooltip key={tech.name}>
-                <TooltipTrigger asChild>
-                  <div
-                    className="p-3 rounded-md bg-muted hover:bg-muted/80 transition-all"
-                    title={tech.name}
-                  >
-                    <img
-                      src={tech.src}
-                      alt={`${tech.name} logo`}
-                      className="h-10 w-auto object-contain"
-                    />
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>{tech.name}</TooltipContent>
-              </Tooltip>
+          <motion.div
+            className="flex flex-wrap justify-center gap-5"
+            variants={containerVariants}
+          >
+            {technologies.map((tech, index) => (
+              <motion.div
+                key={tech.name}
+                variants={itemVariants}
+                custom={index}
+              >
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div
+                      className="p-3 rounded-md bg-muted hover:bg-muted/80 transition-all"
+                      title={tech.name}
+                    >
+                      <img
+                        src={tech.src}
+                        alt={`${tech.name} logo`}
+                        className="h-10 w-auto object-contain"
+                      />
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>{tech.name}</TooltipContent>
+                </Tooltip>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </TooltipProvider>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink } from "lucide-react";
@@ -5,13 +6,45 @@ import data from "@/data/ProjectsData.ts";
 
 const projectData = data;
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 export default function Projects() {
   return (
     <>
-      <div className="flex max-w-3xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-between align-start">
+      <motion.div
+        className="flex max-w-3xl mx-auto px-4 py-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-between align-start"
+          variants={containerVariants}
+        >
           {projectData.map((project, index) => (
-            <div key={index}>
+            <motion.div key={index} variants={itemVariants} custom={index}>
               <div className="max-w-3xl min-h-[450px] mx-auto relative p-6 rounded-xl bg-white/70 dark:bg-zinc-900/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg mb-2">
                 <div className="mb-4">
                   <img
@@ -67,10 +100,10 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 }

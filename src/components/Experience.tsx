@@ -1,6 +1,30 @@
+import { motion } from "framer-motion";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import EducationData from "@/data/EducationData.ts";
 import WorkData from "@/data/WorkData.ts";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut" as const,
+    },
+  },
+};
 
 export default function Experience() {
   const workData = WorkData;
@@ -9,12 +33,24 @@ export default function Experience() {
 
   return (
     <section className="bg-background pb-8">
-      <div className="max-w-3xl mx-auto px-4">
+      <motion.div
+        className="max-w-3xl mx-auto px-4"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <Tabs defaultValue="work" className="w-full">
-          <TabsList className="mb-8">
-            <TabsTrigger value="work" className="cursor-pointer">Work</TabsTrigger>
-            <TabsTrigger value="education" className="cursor-pointer">Education</TabsTrigger>
-          </TabsList>
+          <motion.div variants={itemVariants}>
+            <TabsList className="mb-8">
+              <TabsTrigger value="work" className="cursor-pointer">
+                Work
+              </TabsTrigger>
+              <TabsTrigger value="education" className="cursor-pointer">
+                Education
+              </TabsTrigger>
+            </TabsList>
+          </motion.div>
 
           <TabsContent value="work">
             <ExperienceList data={workData} />
@@ -24,18 +60,26 @@ export default function Experience() {
             <ExperienceList data={educationData} />
           </TabsContent>
         </Tabs>
-      </div>
+      </motion.div>
     </section>
   );
 }
 
 function ExperienceList({ data }: { data: any[] }) {
   return (
-    <div className="space-y-6">
-      {data.map((item) => (
-        <div
+    <motion.div
+      className="space-y-6"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      {data.map((item, index) => (
+        <motion.div
           key={item.id}
           className="flex gap-4 p-6 rounded-xl bg-white/70 dark:bg-zinc-900/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg"
+          variants={itemVariants}
+          custom={index}
         >
           <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden">
             {item.logoType === "image" ? (
@@ -78,8 +122,8 @@ function ExperienceList({ data }: { data: any[] }) {
               </ul>
             )}
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }

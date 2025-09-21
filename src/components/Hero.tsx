@@ -1,12 +1,56 @@
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download, Github, Linkedin, Mail } from "lucide-react";
 import profileImage from "/images/profile-picture.jpeg";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
+const simultaneousVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 export default function Hero() {
   return (
     <section className="bg-background py-8">
-      <div className="max-w-3xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-        <div className="flex-1 text-center md:text-left space-y-4">
+      <motion.div
+        className="max-w-3xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div
+          className="flex-1 text-center md:text-left space-y-4"
+          variants={simultaneousVariants}
+        >
           <h1 className="text-5xl font-bold leading-tight">
             Hi, I'm Arttu. <span className="inline-block">👋</span>
           </h1>
@@ -19,7 +63,10 @@ export default function Hero() {
             food, music and billiards.
           </p>
 
-          <div className="flex flex-wrap gap-2 pt-6 justify-center md:justify-start">
+          <motion.div
+            className="flex flex-wrap gap-2 pt-6 justify-center md:justify-start"
+            variants={itemVariants}
+          >
             <a href="/resume.pdf" download>
               <Button>
                 <Download className="w-4 h-4 mr-2" />
@@ -52,17 +99,17 @@ export default function Hero() {
                 <Mail className="w-5 h-5" />
               </Button>
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="flex">
+        <motion.div className="flex" variants={simultaneousVariants}>
           <img
             src={profileImage}
             alt="Profile picture of myself"
             className="w-full max-w-[250px] rounded-xl shadow-lg mx-auto"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
