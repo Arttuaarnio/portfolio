@@ -27,7 +27,6 @@ A simple and responsive portfolio website built to showcase my projects and skil
 
 ## ✨ Upcoming Features
 
-- Page and section animations
 - Custom 404 error page
 - More projects to the actual projects page
 - Possible blog if wanted
