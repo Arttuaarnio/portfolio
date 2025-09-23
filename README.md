@@ -23,7 +23,7 @@ A simple and responsive portfolio website built to showcase my projects and skil
 | Styling       | Tailwind CSS              |
 | UI Components | shadcn/ui                 |
 | Deployment    | Vercel                    |
-
+| Animation     | Framer-motion             |
 
 ## ✨ Upcoming Features
 
