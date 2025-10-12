@@ -76,24 +76,24 @@ function ExperienceList({ data }: { data: any[] }) {
     >
       {data.map((item, index) => (
         <motion.div
-          key={item.id}
+          key={item.id ?? index}
           className="flex gap-4 p-6 rounded-xl bg-white/70 dark:bg-zinc-900/70 border border-border/40 dark:border-border/60 backdrop-blur-md shadow-md dark:shadow-lg"
           variants={itemVariants}
           custom={index}
         >
           <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden">
-            {item.logoType === "image" ? (
+            {item.logoType === "image" && item.logo ? (
               <img
                 src={item.logo}
-                alt={`${item.company} logo`}
+                alt={`${item.company ?? "Company"} logo`}
                 className="w-full h-full object-contain"
               />
             ) : (
               <div
-                className={`w-full h-full ${item.logoColor} rounded-lg flex items-center justify-center`}
+                className={`w-full h-full ${item.logoColor ?? ""} rounded-lg flex items-center justify-center`}
               >
                 <span className="text-white font-bold text-sm">
-                  {item.logo}
+                  {item.logo ?? ""}
                 </span>
               </div>
             )}
@@ -101,18 +101,18 @@ function ExperienceList({ data }: { data: any[] }) {
 
           <div className="flex-1">
             <div className="flex items-start justify-between mb-2">
-              <h3 className="text-lg font-semibold">{item.company}</h3>
+              <h3 className="text-lg font-semibold">{item.company ?? "Company"}</h3>
               <span className="text-sm text-muted-foreground ml-4 ">
-                {item.duration}
+                {item.duration ?? ""}
               </span>
             </div>
 
-            <p className="text-muted-foreground mb-4">{item.position}</p>
+            <p className="text-muted-foreground mb-4">{item.position ?? ""}</p>
 
-            {item.achievements.length > 0 && (
+            {Array.isArray(item.achievements) && item.achievements.length > 0 && (
               <ul className="space-y-3">
-                {item.achievements.map((achievement: string, index: number) => (
-                  <li key={index} className="flex items-start gap-3">
+                {item.achievements.map((achievement: string, idx: number) => (
+                  <li key={idx} className="flex items-start gap-3">
                     <span className="text-white-500 text-l">•</span>
                     <span className="text-sm text-muted-foreground leading-relaxed">
                       {achievement}
