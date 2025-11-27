@@ -40,7 +40,7 @@ const simultaneousVariants = {
 
 export default function Hero() {
   return (
-    <section className="bg-background py-8">
+    <section className="py-8 relative">
       <motion.div
         className="max-w-3xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8"
         variants={containerVariants}

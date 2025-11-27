@@ -9,6 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ScrollToTop from "./components/ScrollToTop";
+import ParticleBackground from "./components/ParticleBackground";
 import Home from "./pages/HomePage";
 import Projects from "./pages/ProjectsPage";
 
@@ -23,8 +24,10 @@ function AppContent() {
   return (
     <>
       <ScrollToTop />
+      <div className="fixed inset-0 bg-background -z-20" />
+      <ParticleBackground />
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-20 relative">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />

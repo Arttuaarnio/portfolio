@@ -112,7 +112,7 @@ const itemVariants = {
 
 export default function Technologies() {
   return (
-    <section className="py-8 bg-background">
+    <section className="py-8 relative">
       <motion.div
         className="max-w-3xl mx-auto px-4"
         variants={containerVariants}

@@ -32,7 +32,7 @@ export default function Experience() {
   const educationData = EducationData;
 
   return (
-    <section className="bg-background pb-8">
+    <section className="pb-8 relative">
       <motion.div
         className="max-w-3xl mx-auto px-4"
         variants={containerVariants}
@@ -90,7 +90,9 @@ function ExperienceList({ data }: { data: any[] }) {
               />
             ) : (
               <div
-                className={`w-full h-full ${item.logoColor ?? ""} rounded-lg flex items-center justify-center`}
+                className={`w-full h-full ${
+                  item.logoColor ?? ""
+                } rounded-lg flex items-center justify-center`}
               >
                 <span className="text-white font-bold text-sm">
                   {item.logo ?? ""}
@@ -101,7 +103,9 @@ function ExperienceList({ data }: { data: any[] }) {
 
           <div className="flex-1">
             <div className="flex items-start justify-between mb-2">
-              <h3 className="text-lg font-semibold">{item.company ?? "Company"}</h3>
+              <h3 className="text-lg font-semibold">
+                {item.company ?? "Company"}
+              </h3>
               <span className="text-sm text-muted-foreground ml-4 ">
                 {item.duration ?? ""}
               </span>
@@ -109,18 +113,19 @@ function ExperienceList({ data }: { data: any[] }) {
 
             <p className="text-muted-foreground mb-4">{item.position ?? ""}</p>
 
-            {Array.isArray(item.achievements) && item.achievements.length > 0 && (
-              <ul className="space-y-3">
-                {item.achievements.map((achievement: string, idx: number) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="text-white-500 text-l">•</span>
-                    <span className="text-sm text-muted-foreground leading-relaxed">
-                      {achievement}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            )}
+            {Array.isArray(item.achievements) &&
+              item.achievements.length > 0 && (
+                <ul className="space-y-3">
+                  {item.achievements.map((achievement: string, idx: number) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="text-white-500 text-l">•</span>
+                      <span className="text-sm text-muted-foreground leading-relaxed">
+                        {achievement}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
           </div>
         </motion.div>
       ))}
