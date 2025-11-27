@@ -8,7 +8,7 @@ export default [
     position: "Software Developer Trainee",
     duration: "Oct 2025 - Present",
     achievements: [
-      "Planned, designed, and developed an early-stage cross-platform app for iOS, Android, and web.",
+      "Planned, designed, and developed an early-stage cross-platform product for iOS, Android, and the web.",
       "Worked with a 3-person team using Flutter and Dart to deliver the initial feature set.",
     ],
   },
