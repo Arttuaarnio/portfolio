@@ -7,6 +7,10 @@ export default [
     logoColor: "transparent",
     position: "Software Developer Trainee",
     duration: "Oct 2025 - Present",
+    achievements: [
+      "Planned, designed, and developed an early-stage cross-platform app for iOS, Android, and web.",
+      "Worked with a 3-person team using Flutter and Dart to deliver the initial feature set.",
+    ],
   },
   {
     id: 2,
